@@ -23,3 +23,6 @@ GROUP BY - different values
 int - tal
 char/varchar/nvarchar/nchar - characters
 as - alternatively
+IDENTITY - autogenarian a ID
+PRIMARY - Primary keys must contain UNIQUE values, and cannot contain NULL values
+FOREN - A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
