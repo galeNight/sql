@@ -1,0 +1,47 @@
+USE Master
+GO
+IF DB_ID('GeoTema') is not null
+	BEGIN
+		ALTER DATABASE GeoTema SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+		DROP DATABASE GeoTema
+	END
+GO
+CREATE DATABASE GeoTema
+GO
+USE GeoTema
+GO
+
+DROP TABLE IF EXISTS statistik
+
+CREATE TABLE statistik (
+ID INT IDENTITY (1,1),
+Land NVARCHAR(255),
+Verdensdel1 NVARCHAR(255),
+Verdensdel2 NVARCHAR (255),
+Rang NVARCHAR (255),
+Fødselsrate DECIMAL(4,2)
+)
+
+
+INSERT INTO statistik (Land,Verdensdel1,Verdensdel2,Rang,Fødselsrate)
+VALUES('Danmark','Europa','','169','10.27')
+INSERT INTO statistik (Land,Verdensdel1,Verdensdel2,Rang,Fødselsrate)
+VALUES ('Canada','NOrdamerika','','168','10.28')
+INSERT INTO statistik (Land,Verdensdel1,Verdensdel2,Rang,Fødselsrate)
+VALUES ('Nigeria','Afrika','','1','45.45')
+INSERT INTO statistik (Land,Verdensdel1,Verdensdel2,Rang,Fødselsrate)
+VALUES ('Indien','Asien','','85','19.50')
+INSERT INTO statistik (Land,Verdensdel1,Verdensdel2,Rang,Fødselsrate)
+VALUES ('Brasilien','Sydamerika','','129','14.56')
+INSERT INTO statistik (Land,Verdensdel1,Verdensdel2,Rang,Fødselsrate)
+VALUES ('New Zeland','Oceanien','','139','13.33')
+INSERT INTO statistik (Land,Verdensdel1,Verdensdel2,Rang,Fødselsrate)
+VALUES ('USA','Nordamerika','','145','12.38')
+INSERT INTO statistik (Land,Verdensdel1,Verdensdel2,Rang,Fødselsrate)
+VALUES ('Norge','Europa','','149','12.14')
+INSERT INTO statistik (Land,Verdensdel1,Verdensdel2,Rang,Fødselsrate)
+VALUES ('Tyrkiet','Europa','Asien','114','16.33')
+INSERT INTO statistik (Land,Verdensdel1,Verdensdel2,Rang,Fødselsrate)
+VALUES ('Ukraine','Europa','Asien','162','10.72')
+
+SELECT * FROM statistik
